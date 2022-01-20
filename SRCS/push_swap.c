@@ -6,21 +6,69 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 21:10:25 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/01/18 21:41:07 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/01/20 19:20:37 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+int	print_stack(t_stack *head, char c)
+{
+	t_stack	*stack;
+	
+	stack = head;
+	printf("stack %c : ", c);
+	while (stack)
+	{
+		printf("%i ", stack->num);
+		stack = stack->next;
+	}
+	printf("\n");
+	return (0);
+}
+
 int main(int argc, char **argv)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_stack	*head_a;
+	t_stack	*head_b;
 
-	check_error(argc, argv);
-	stack_a = init_stack_a(argc, argv);
-	stack_b = init_stack_b(argc);
-	if ((!stack_a) || (!stack_b))
+	if (check_error(argc, argv))
 		return (0);
-	
+	head_a = init_stack_a(argc, argv);
+	head_b = init_stack_b();
+	if ((!head_a))
+		return (0);
+	print_stack(head_a, 'a');
+	sab(&head_a);
+	print_stack(head_a, 'a');
+	pab(&head_b, &head_a);
+	pab(&head_b, &head_a);
+	pab(&head_b, &head_a);
+	pab(&head_b, &head_a);
+	print_stack(head_a, 'a');
+	print_stack(head_b, 'b');
+	rab(&head_a);
+	print_stack(head_a, 'a');
+	rrab(&head_a);
+	print_stack(head_a, 'a');
+	rr(&head_a, &head_b);
+	print_stack(head_a, 'a');
+	print_stack(head_b, 'b');
+	rrr(&head_a, &head_b);
+	print_stack(head_a, 'a');
+	print_stack(head_b, 'b');
+	ss(&head_a, &head_b);
+	print_stack(head_a, 'a');
+	print_stack(head_b, 'b');
+	rrab(&head_b);
+	rrab(&head_b);
+	print_stack(head_a, 'a');
+	print_stack(head_b, 'b');
+	pab(&head_a, &head_b);
+	pab(&head_a, &head_b);
+	pab(&head_a, &head_b);
+	pab(&head_a, &head_b);
+	print_stack(head_a, 'a');
+	print_stack(head_b, 'b');
+	return (0);
 }

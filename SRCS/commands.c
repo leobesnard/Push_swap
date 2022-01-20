@@ -6,11 +6,22 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:39:46 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/01/19 20:58:11 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/01/20 17:04:36 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
+
+
+int	ft_swap(int *a, int *b)
+{
+	int tmp;
+	
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+	return (0);
+}
 
 int	sab(t_stack **head)
 {
@@ -27,10 +38,10 @@ int	pab(t_stack **head_to,t_stack **head_from)
 	t_stack	*to;
 	t_stack	*from;
 	
+	to = *head_to;
+	from = *head_from;
 	if (from)
 	{
-		to = *head_to;
-		from = *head_from;
 		*head_from = from->next;
 		from->next = to;
 		*head_to = from;
@@ -47,7 +58,7 @@ int	rab(t_stack **head)
 		return (0);
 	while (stack->next)
 	{
-		ft_swap(stack->num,stack->next->num);
+		ft_swap(&stack->num,&stack->next->num);
 		stack = stack->next;
 	}
 	return (0);
@@ -67,4 +78,5 @@ int	rrab(t_stack **head)
 	stack->next = NULL;
 	last->next = *head;
 	*head = last;
+	return (0);
 }
