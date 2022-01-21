@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 21:10:25 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/01/20 19:20:37 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/01/21 18:17:03 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,37 +38,10 @@ int main(int argc, char **argv)
 	head_b = init_stack_b();
 	if ((!head_a))
 		return (0);
-	print_stack(head_a, 'a');
-	sab(&head_a);
-	print_stack(head_a, 'a');
-	pab(&head_b, &head_a);
-	pab(&head_b, &head_a);
-	pab(&head_b, &head_a);
-	pab(&head_b, &head_a);
-	print_stack(head_a, 'a');
-	print_stack(head_b, 'b');
-	rab(&head_a);
-	print_stack(head_a, 'a');
-	rrab(&head_a);
-	print_stack(head_a, 'a');
-	rr(&head_a, &head_b);
-	print_stack(head_a, 'a');
-	print_stack(head_b, 'b');
-	rrr(&head_a, &head_b);
-	print_stack(head_a, 'a');
-	print_stack(head_b, 'b');
-	ss(&head_a, &head_b);
-	print_stack(head_a, 'a');
-	print_stack(head_b, 'b');
-	rrab(&head_b);
-	rrab(&head_b);
-	print_stack(head_a, 'a');
-	print_stack(head_b, 'b');
-	pab(&head_a, &head_b);
-	pab(&head_a, &head_b);
-	pab(&head_a, &head_b);
-	pab(&head_a, &head_b);
-	print_stack(head_a, 'a');
-	print_stack(head_b, 'b');
+	//print_stack(head_a, 'a');
+	//print_stack(head_b, 'b');
+	sort(&head_a, &head_b);
+	//print_stack(head_a, 'a');
+	//print_stack(head_b, 'b');
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:44:59 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/01/20 19:14:19 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/01/21 19:49:34 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,11 @@ int	ss(t_stack **stack_a, t_stack **stack_b);
 int	rr(t_stack **stack_a, t_stack **stack_b);
 int	rrr(t_stack **stack_a, t_stack **stack_b);
 int	ft_atoi(const char *nptr);
+int	totop(t_stack **head, int index, int nb);
+int	find_min(t_stack *head);
+int	sort(t_stack **head_a, t_stack **head_b);
+int	print_stack(t_stack *head, char c);
+int	scantop(t_stack *head, int chunkmin, int chunkmax);
+int	find_max(t_stack *head);
 
 #endif
