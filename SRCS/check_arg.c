@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:39:31 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/01/20 19:27:07 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/01/24 17:18:57 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int	check_arg(int argc, char **argv)
 		if (argv[i][0] == '-' && !argv[i][1])
 			return (1);
 		if (argv[i][0] == '-' && argv[i][1])
-			i++;
+			j++;
 		while (argv[i][j])
 		{
-			if (argv[i][j] > '9' || argv[i][j] < '0')
+			if (argv[i][j] > '9' || argv[i][j] < '0' || argv[i][j] == '-')
 				return (1);
 			j++;
 		}

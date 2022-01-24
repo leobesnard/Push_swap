@@ -1,47 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   tools2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 21:10:25 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/01/24 16:52:29 by lbesnard         ###   ########.fr       */
+/*   Created: 2022/01/24 16:58:24 by lbesnard          #+#    #+#             */
+/*   Updated: 2022/01/24 16:58:52 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	print_stack(t_stack *head, char c)
+int	min(t_stack *head)
 {
 	t_stack	*stack;
-	
+	int		min;
+	int		i;
+
 	stack = head;
-	printf("stack %c : ", c);
+	i = 1;
+	min = stack->num;
 	while (stack)
 	{
-		printf("%i ", stack->num);
+		if (stack->num < min)
+		{
+			min = stack->num;
+		}
+		i++;
 		stack = stack->next;
 	}
-	printf("\n");
-	return (0);
+	return (min);
 }
 
-int main(int argc, char **argv)
+int	ft_max(t_stack *head)
 {
-	t_stack	*head_a;
-	t_stack	*head_b;
+	t_stack	*stack;
+	int		max;
+	int		i;
 
-	if (check_error(argc, argv))
-		return (0);
-	head_a = init_stack_a(argc, argv);
-	head_b = init_stack_b();
-	if ((!head_a))
-		return (0);
-	//print_stack(head_a, 'a');
-	//print_stack(head_b, 'b');
-	sort(&head_a, &head_b);
-	//print_stack(head_a, 'a');
-	//print_stack(head_b, 'b');
-	return (0);
+	stack = head;
+	i = 1;
+	max = stack->num;
+	while (stack)
+	{
+		if (stack->num > max)
+		{
+			max = stack->num;
+		}
+		i++;
+		stack = stack->next;
+	}
+	return (max);
 }

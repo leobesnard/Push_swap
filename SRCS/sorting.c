@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 15:15:52 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/01/21 19:50:08 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/01/24 17:35:39 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,20 @@ int	sort(t_stack **head_a, t_stack **head_b)
 	int		stacksize;
 	int		chunkmax;
 	int		chunkmin;
+	int		max;
 
-	chunkmin = find_min(*head_a);
+	chunkmin = min(*head_a);
 	chunkmax = chunkmin + 19;
-	while (*head_a)
+	max = ft_max(*head_a);
+	while (*head_a && chunkmin <= max)
 	{
 		while ((scantop(*head_a, chunkmin, chunkmax) >= 0))
 		{
 			stacksize = size(*head_a);
 			index = scantop(*head_a, chunkmin, chunkmax);
-			totop(head_a, index, stacksize);
+			totop(head_a, index, stacksize, 'a');
 			pab(head_b, head_a);
 			printf("pb\n");
-			//print_stack(*head_a, 'a');
 		}
 		chunkmin += 20;
 		chunkmax += 20;
@@ -52,7 +53,7 @@ int	sort(t_stack **head_a, t_stack **head_b)
 	{
 		stacksize = size(*head_b);
 		index = find_max(*head_b);
-		totop(head_b, index, stacksize);
+		totop(head_b, index, stacksize, 'b');
 		pab(head_a, head_b);
 		printf("pa\n");
 	}
