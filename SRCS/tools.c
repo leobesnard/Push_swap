@@ -5,48 +5,57 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 15:05:41 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/01/24 16:58:48 by lbesnard         ###   ########.fr       */
+/*   Created: 2022/02/22 16:14:36 by lbesnard          #+#    #+#             */
+/*   Updated: 2022/02/23 22:18:33 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-
-int	find_min(t_stack *head)
+int	size(t_stack **head)
 {
-	t_stack	*stack;
-	int		min;
-	int		index;
 	int		i;
+	t_stack	*stack;
 
-	stack = head;
-	i = 1;
-	index = 0;
-	min = stack->num;
-	while (stack)
+	i = 0;
+	stack = *head;
+	while (stack->next)
 	{
-		if (stack->num < min)
-		{
-			min = stack->num;
-			index = i;
-		}
 		i++;
 		stack = stack->next;
 	}
-	return (index);
+	return (i);
 }
 
-int	find_max(t_stack *head)
+int	get_value(int index, t_stack **head)
+{
+	t_stack	*stack;
+	int		i;
+	
+	stack = *head;
+	i = 0;
+	if (!*head)
+		return (0);
+	while (i < index)
+	{
+		stack = stack->next;
+		i++;
+	}
+	return (stack->num);
+}
+
+int	maxindex(t_stack **head)
 {
 	t_stack	*stack;
 	int		max;
 	int		index;
 	int		i;
 
-	stack = head;
-	i = 1;
+	stack = *head;
+	i = 0;
 	index = 0;
+	if (!*head)
+		return (0);
 	max = stack->num;
 	while (stack)
 	{
@@ -61,52 +70,25 @@ int	find_max(t_stack *head)
 	return (index);
 }
 
-int	totop(t_stack **head, int index, int nb, char c)
-{
-	int	i;
-
-	i = 0;
-	if (!(*head)->next)
-		return (0);
-	if (index <= ((nb / 2) + 1))
-	{
-		while (i < (index - 1))
-		{
-			rab(head);
-			printf("r%c\n", c);
-			//print_stack(*head, 'a');
-			i++;
-		}
-	}
-	else
-	{
-		i = nb;
-		while (i > (index - 1))
-		{
-			rrab(head);
-			printf("rr%c\n", c);
-			//print_stack(*head, 'a');
-			i--;
-		}
-	}
-	return (0);
-}
-
-int	scantop(t_stack *head, int chunkmin, int chunkmax)
+int	minindex(t_stack **head)
 {
 	t_stack	*stack;
+	int		min;
 	int		index;
 	int		i;
 
-	stack = head;
-	i = 1;
-	index = -1;
+	stack = *head;
+	i = 0;
+	index = 0;
+	if (!*head)
+		return (0);
+	min = stack->num;
 	while (stack)
 	{
-		if (stack->num >= chunkmin && stack->num <= chunkmax)
+		if (stack->num < min)
 		{
+			min = stack->num;
 			index = i;
-			return (index);
 		}
 		i++;
 		stack = stack->next;

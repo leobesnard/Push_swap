@@ -1,4 +1,4 @@
-SRCS = SRCS/check_arg.c SRCS/commands.c SRCS/commands2.c SRCS/parsing.c SRCS/push_swap.c SRCS/tools.c SRCS/sorting.c SRCS/tools2.c 
+SRCS = SRCS/check_arg.c SRCS/commands.c SRCS/commands2.c SRCS/parsing.c SRCS/tools.c SRCS/sorting.c SRCS/test.c SRCS/cost.c #SRCS/push_swap.c  
 
 OBJS = ${SRCS:.c=.o}
 

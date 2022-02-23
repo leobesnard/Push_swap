@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:39:46 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/01/20 17:04:36 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/02/23 22:50:09 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	pab(t_stack **head_to,t_stack **head_from)
 	return (0);
 }
 
-int	rab(t_stack **head)
+int	rab(t_stack **head, char c)
 {
 	t_stack	*stack;
 
@@ -61,10 +61,16 @@ int	rab(t_stack **head)
 		ft_swap(&stack->num,&stack->next->num);
 		stack = stack->next;
 	}
+	if (c == 'r')
+		printf("rr\n");
+	else if (c == 'd')
+		return (0);
+	else
+		printf("r%c\n", c);
 	return (0);
 }
 
-int	rrab(t_stack **head)
+int	rrab(t_stack **head, char c)
 {
 	t_stack	*last;
 	t_stack	*stack;
@@ -78,5 +84,11 @@ int	rrab(t_stack **head)
 	stack->next = NULL;
 	last->next = *head;
 	*head = last;
+	if (c == 'r')
+		printf("rrr\n");
+	else if (c == 'd')
+		return (0);
+	else
+		printf("rr%c\n",c);
 	return (0);
 }

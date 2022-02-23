@@ -5,57 +5,55 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/21 15:15:52 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/01/24 17:35:39 by lbesnard         ###   ########.fr       */
+/*   Created: 2022/02/23 14:54:02 by lbesnard          #+#    #+#             */
+/*   Updated: 2022/02/23 23:03:14 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	size(t_stack *head)
+int	filop(t_stack **head_a, t_stack **head_b, t_op *op, int cindex, int mindex)
 {
-	int	i;
-
-	i = 0;
-	while (head)
-	{
-		i++;
-		head = head->next;
-	}
-	return (i);
+		if (mindex > ((size(head_a) / 2) + 1))
+			op->rra = size(head_a) + 1 - mindex;
+		else
+			op->ra = mindex;
+		if (cindex > ((size(head_b) / 2) + 1))
+			op->rrb = size(head_b) + 1 - cindex;
+		else 
+			op->rb = cindex;
+		return (0);
 }
 
-int	sort(t_stack **head_a, t_stack **head_b)
+int	numop(t_stack **head_a, t_stack **head_b, int index, t_op *op)
 {
-	int		index;
-	int		stacksize;
-	int		chunkmax;
-	int		chunkmin;
-	int		max;
-
-	chunkmin = min(*head_a);
-	chunkmax = chunkmin + 19;
-	max = ft_max(*head_a);
-	while (*head_a && chunkmin <= max)
-	{
-		while ((scantop(*head_a, chunkmin, chunkmax) >= 0))
-		{
-			stacksize = size(*head_a);
-			index = scantop(*head_a, chunkmin, chunkmax);
-			totop(head_a, index, stacksize, 'a');
-			pab(head_b, head_a);
-			printf("pb\n");
-		}
-		chunkmin += 20;
-		chunkmax += 20;
-	}
-	while (*head_b)
-	{
-		stacksize = size(*head_b);
-		index = find_max(*head_b);
-		totop(head_b, index, stacksize, 'b');
-		pab(head_a, head_b);
-		printf("pa\n");
-	}
+	if (get_value(index, head_b) > get_value(maxindex(head_a), head_a))
+		filop(head_a, head_b, op, index, minindex(head_a));
+	else
+		filop(head_a, head_b, op, index, find_sup(get_value(index, head_b), head_a));
 	return (0);
+}
+
+void	execop(t_stack **head_a, t_stack **head_b, t_op *op)
+{
+	while (op->ra && op->rb)
+	{
+		rr(head_a, head_b);
+		op->ra--;
+		op->rb--;
+	}
+	while (op->rra && op->rrb)
+	{
+		rrr(head_a, head_b);
+		op->rra--;
+		op->rrb--;
+	}
+	while (op->ra--)
+		rab(head_a, 'a');
+	while (op->rb--)
+		rab(head_b, 'b');
+	while (op->rra--)
+		rrab(head_a, 'a');
+	while (op->rrb--)
+		rrab(head_b, 'b');	
 }
