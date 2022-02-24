@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:54:02 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/23 23:03:14 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/02/24 15:03:46 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,3 +57,36 @@ void	execop(t_stack **head_a, t_stack **head_b, t_op *op)
 	while (op->rrb--)
 		rrab(head_b, 'b');	
 }
+
+int	find_med(t_stack **head)
+{
+	int		i;
+	int		*tab;
+	int		tmp;
+	int		ret;
+	t_stack *stack;
+	
+	i = 0;
+	stack = *head;
+	tmp = 0;
+	tab = malloc(sizeof(*tab) * size(&stack));
+	tab[i] = get_value(minindex(&stack), &stack);
+	while (i < size(&stack))
+	{
+		tmp = tab[i];
+		i++;
+		tab[i] = get_value(find_sup(tmp, &stack), &stack);
+	}
+	i = size(&stack) / 2;
+	ret = tab [i];
+	free(tab);
+	return (ret);
+}
+
+/*int	sorting(t_stack **head_a, t_stack **head_b)
+{
+	while (!is_sort(head_a))
+	{
+		find_med(head_a);
+	}
+}*/

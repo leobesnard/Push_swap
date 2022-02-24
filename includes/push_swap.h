@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:44:59 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/23 22:50:43 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/02/24 15:02:50 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ void	ft_lstadd_back(t_stack **alst, t_stack *new);
 int	find_sup(int value, t_stack **head);
 int	numop(t_stack **head_a, t_stack **head_b, int index, t_op *op);
 void	execop(t_stack **head_a, t_stack **head_b, t_op *op);
+int	find_med(t_stack **head);
 
 #endif
