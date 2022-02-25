@@ -6,23 +6,37 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:54:02 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/24 15:03:46 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/02/25 17:48:54 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+
+void	print_struct(t_op *op)
+{
+	printf("rra %d\n", op->rra);
+	printf("rrb %d\n", op->rrb);
+	printf("ra %d\n", op->ra);
+	printf("rb %d\n", op->rb);
+}
+
+
 int	filop(t_stack **head_a, t_stack **head_b, t_op *op, int cindex, int mindex)
 {
-		if (mindex > ((size(head_a) / 2) + 1))
-			op->rra = size(head_a) + 1 - mindex;
-		else
-			op->ra = mindex;
-		if (cindex > ((size(head_b) / 2) + 1))
-			op->rrb = size(head_b) + 1 - cindex;
-		else 
-			op->rb = cindex;
-		return (0);
+	op->ra = 0;
+	op->rb = 0;
+	op->rra = 0;
+	op->rrb = 0;
+	if (mindex > ((size(head_a) / 2) + 1))
+		op->rra = size(head_a) - mindex;
+	else
+		op->ra = mindex;
+	if (cindex > ((size(head_b) / 2) + 1))
+		op->rrb = size(head_b) - cindex;
+	else 
+		op->rb = cindex;
+	return (0);
 }
 
 int	numop(t_stack **head_a, t_stack **head_b, int index, t_op *op)
@@ -36,6 +50,7 @@ int	numop(t_stack **head_a, t_stack **head_b, int index, t_op *op)
 
 void	execop(t_stack **head_a, t_stack **head_b, t_op *op)
 {
+	//print_struct(op);
 	while (op->ra && op->rb)
 	{
 		rr(head_a, head_b);
@@ -58,35 +73,36 @@ void	execop(t_stack **head_a, t_stack **head_b, t_op *op)
 		rrab(head_b, 'b');	
 }
 
-int	find_med(t_stack **head)
+int	is_sort(t_stack **head)
 {
-	int		i;
-	int		*tab;
-	int		tmp;
-	int		ret;
-	t_stack *stack;
-	
-	i = 0;
+	t_stack	*stack;
+
 	stack = *head;
-	tmp = 0;
-	tab = malloc(sizeof(*tab) * size(&stack));
-	tab[i] = get_value(minindex(&stack), &stack);
-	while (i < size(&stack))
+	if (!stack)
+		return (0);
+	while (stack->next)
 	{
-		tmp = tab[i];
-		i++;
-		tab[i] = get_value(find_sup(tmp, &stack), &stack);
+		if (stack->num > stack->next->num)
+			return (0);
+		stack = stack->next;
 	}
-	i = size(&stack) / 2;
-	ret = tab [i];
-	free(tab);
-	return (ret);
+	return (1);
 }
 
-/*int	sorting(t_stack **head_a, t_stack **head_b)
+int	sorting(t_stack **head_a, t_stack **head_b)
 {
-	while (!is_sort(head_a))
+	t_op	op;
+
+	op.ra = 0;
+	op.rb = 0;
+	op.rra = 0;
+	op.rrb = 0;
+	push_med(head_a, head_b);
+	while (*head_b)
 	{
-		find_med(head_a);
+		numop(head_a, head_b, find_lowcost(head_a, head_b), &op);
+		execop(head_a, head_b, &op);
+		pab(head_a, head_b, 'a');
 	}
-}*/
+	return (0);
+}

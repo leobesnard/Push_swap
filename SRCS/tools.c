@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:14:36 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/23 22:18:33 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/02/25 16:41:26 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	size(t_stack **head)
 
 	i = 0;
 	stack = *head;
-	while (stack->next)
+	while (stack)
 	{
 		i++;
 		stack = stack->next;

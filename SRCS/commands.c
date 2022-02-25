@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:39:46 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/24 15:33:04 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/02/25 15:40:35 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	sab(t_stack **head)
 	return (0);
 }
 
-int	pab(t_stack **head_to,t_stack **head_from)
+int	pab(t_stack **head_to,t_stack **head_from, char c)
 {
 	t_stack	*to;
 	t_stack	*from;
@@ -46,6 +46,7 @@ int	pab(t_stack **head_to,t_stack **head_from)
 		from->next = to;
 		*head_to = from;
 	}
+	printf("p%c\n", c);
 	return (0);
 }
 

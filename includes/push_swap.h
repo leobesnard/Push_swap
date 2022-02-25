@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:44:59 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/24 15:02:50 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/02/25 17:41:32 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		check_arg(int argc, char **argv);
 int	check_error(int argc, char **argv);
 int	ft_swap(int *a, int *b);
 int	sab(t_stack **head);
-int	pab(t_stack **head_to,t_stack **head_from);
+int	pab(t_stack **head_to,t_stack **head_from, char c);
 int	rab(t_stack **head, char c);
 int	rrab(t_stack **head, char c);
 int	ss(t_stack **stack_a, t_stack **stack_b);
@@ -68,5 +68,10 @@ int	find_sup(int value, t_stack **head);
 int	numop(t_stack **head_a, t_stack **head_b, int index, t_op *op);
 void	execop(t_stack **head_a, t_stack **head_b, t_op *op);
 int	find_med(t_stack **head);
+int	range(t_stack **head_a, int index);
+int	is_sort(t_stack **head);
+int	push_med(t_stack **head_a, t_stack **head_b);
+int	sorting(t_stack **head_a, t_stack **head_b);
+int	to_top(t_stack **head, int index);
 
 #endif

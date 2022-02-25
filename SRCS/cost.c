@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:13:49 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/24 14:55:07 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/02/25 17:53:48 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,12 @@ int	find_sup(int value, t_stack **head)
 	t_stack	*stack;
 	
 	i = 0;
-	diff = get_value(maxindex(head), head) - get_value(minindex(head), head);
+	diff = 2000;
 	stack = *head;
+	index = 0;
 	if (!head)
+		return (0);
+	if (size(head) == 1)
 		return (0);
 	while (stack)
 	{
