@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:54:02 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/25 17:48:54 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/02/25 22:03:15 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,12 +97,13 @@ int	sorting(t_stack **head_a, t_stack **head_b)
 	op.rb = 0;
 	op.rra = 0;
 	op.rrb = 0;
-	push_med(head_a, head_b);
 	while (*head_b)
 	{
 		numop(head_a, head_b, find_lowcost(head_a, head_b), &op);
 		execop(head_a, head_b, &op);
 		pab(head_a, head_b, 'a');
+		/* print_stack(*head_a, 'a');
+		print_stack(*head_b, 'b'); */
 	}
 	return (0);
 }

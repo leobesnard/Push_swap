@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:13:49 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/25 17:53:48 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/02/25 22:24:14 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	range(t_stack **head_a, int index)
 
 	cost = 0;
 	if (index > ((size(head_a) / 2) + 1))
-		cost += size(head_a) + 1 - index;
+		cost += size(head_a) - index;
 	else
 		cost += index;
 	return (cost);
@@ -58,7 +58,7 @@ int	cost(t_stack **head_a, t_stack **head_b, int index)
 	int	supindex;
 	
 	if (get_value(index, head_b) > get_value(maxindex(head_a), head_a))
-		cost = range(head_a, minindex(head_a)) + range(head_a, index);
+		cost = range(head_a, minindex(head_a)) + range(head_b, index);
 	else 
 	{
 		supindex = find_sup(get_value(index, head_b), head_a);

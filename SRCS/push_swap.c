@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 21:10:25 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/25 17:57:08 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/02/25 22:15:44 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,14 @@ int main(int argc, char **argv)
 		return (0);
 	//print_stack(head_a, 'a');
 	//print_stack(head_b, 'b');
+	if (argc > 102)
+		push_med(&head_a, &head_b);
+	else 
+		while (!is_sort(&head_a))
+			pab(&head_b, &head_a, 'b');
 	sorting(&head_a, &head_b);
 	to_top(&head_a, minindex(&head_a));
 	/* print_stack(head_a, 'a');
-	print_stack(head_b, 'b'); */
-	return (0);
+	print_stack(head_b, 'b');
+	return (0); */
 }
