@@ -37,6 +37,49 @@ int	find_med(t_stack **head)
 	return (ret);
 }
 
+int	to_top(t_stack **head, int index)
+{
+	if (index < ((size(head) / 2) + 1))
+		while (index > 0)
+		{
+			rab(head, 'a');
+			index--;
+		}
+	else
+		while (index < size(head))
+		{
+			rrab(head, 'q');
+			index++;
+		}
+	return (0);
+}
+
+int	med_top(t_stack **head_a)
+{
+	t_stack *stack;
+	int		i;
+	int		first_med;
+	int		last_med;
+
+	stack = *head_a;
+	first_med = -1;
+	while (stack)
+	{
+		if (stack->num < find_med(&head_a))
+		{
+			if (first_med == -1)
+				first_med = i;
+			else
+				last_med = i;
+		}
+		stack = stack->next;
+	}
+	if (range(head_a, first_med) <= range(head_a, last_med))
+		to_top(head_a, first_med);
+	else
+		to_top(head_a, last_med);
+}
+
 int	push_med(t_stack **head_a, t_stack **head_b)
 {
 	t_stack	*stack;

@@ -51,6 +51,6 @@ int main()
 	numop(&stack_a, &stack_b, find_lowcost(&stack_a, &stack_b), &op);
 	print_struct(&op);
 	execop(&stack_a, &stack_b, &op);*/
-	printf("mediane : %d\n", med(&stack_a));
+	printf("mediane : %d\n", find_med(&stack_a));
 	return (0);
 }
