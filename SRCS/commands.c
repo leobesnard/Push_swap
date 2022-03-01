@@ -23,13 +23,14 @@ int	ft_swap(int *a, int *b)
 	return (0);
 }
 
-int	sab(t_stack **head)
+int	sab(t_stack **head, char c)
 {
 	t_stack	*stack;
 	
 	stack = *head;
 	if (stack && stack->next)
 		ft_swap(&stack->num, &stack->next->num);
+	printf("s%c\n", c);
 	return (0);
 }
 

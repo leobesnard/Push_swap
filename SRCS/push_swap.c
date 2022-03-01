@@ -38,16 +38,17 @@ int main(int argc, char **argv)
 	head_b = init_stack_b();
 	if ((!head_a))
 		return (0);
-	//print_stack(head_a, 'a');
-	//print_stack(head_b, 'b');
-	if (argc > 102)
-		push_med(&head_a, &head_b);
-	else 
-		while (!is_sort(&head_a))
-			pab(&head_b, &head_a, 'b');
-	sorting(&head_a, &head_b);
-	to_top(&head_a, minindex(&head_a));
-	/* print_stack(head_a, 'a');
-	print_stack(head_b, 'b');
-	return (0); */
+	if (argc < 7)
+		sorting_small(&head_a, &head_b);
+	else
+		if (argc > 101)
+			push_med(&head_a, &head_b);
+		else 
+			while (!is_sort(&head_a) || size(&head_a) == 2)
+				pab(&head_b, &head_a, 'b');
+		sorting(&head_a, &head_b);
+		to_top(&head_a, minindex(&head_a));
+	/*print_stack(head_a, 'a');
+	print_stack(head_b, 'b');*/
+	return (0);
 }

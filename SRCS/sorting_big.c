@@ -102,8 +102,8 @@ int	sorting(t_stack **head_a, t_stack **head_b)
 		numop(head_a, head_b, find_lowcost(head_a, head_b), &op);
 		execop(head_a, head_b, &op);
 		pab(head_a, head_b, 'a');
-		/* print_stack(*head_a, 'a');
-		print_stack(*head_b, 'b'); */
+		/*print_stack(*head_a, 'a');
+		print_stack(*head_b, 'b');*/
 	}
 	return (0);
 }

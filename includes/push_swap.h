@@ -38,7 +38,7 @@ t_stack	*init_stack_b(void);
 int		check_arg(int argc, char **argv);
 int	check_error(int argc, char **argv);
 int	ft_swap(int *a, int *b);
-int	sab(t_stack **head);
+int	sab(t_stack **head, char c);
 int	pab(t_stack **head_to,t_stack **head_from, char c);
 int	rab(t_stack **head, char c);
 int	rrab(t_stack **head, char c);
@@ -73,5 +73,8 @@ int	is_sort(t_stack **head);
 int	push_med(t_stack **head_a, t_stack **head_b);
 int	sorting(t_stack **head_a, t_stack **head_b);
 int	to_top(t_stack **head, int index);
+int sort_five(t_stack **head_a, t_stack **head_b);
+int sort_three(t_stack **head_a);
+int sorting_small(t_stack **head_a, t_stack **head_b);
 
 #endif

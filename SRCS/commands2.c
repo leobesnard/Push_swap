@@ -14,8 +14,8 @@
 
 int	ss(t_stack **stack_a, t_stack **stack_b)
 {
-	sab(stack_a);
-	sab(stack_b);
+	sab(stack_a, 'a');
+	sab(stack_b, 'b');
 	return (0);
 }
 
