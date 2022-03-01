@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:39:46 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/25 21:23:13 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 16:54:46 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	sab(t_stack **head, char c)
 	stack = *head;
 	if (stack && stack->next)
 		ft_swap(&stack->num, &stack->next->num);
-	printf("s%c\n", c);
+	ft_printf("s%c\n", c);
 	return (0);
 }
 
@@ -47,7 +47,7 @@ int	pab(t_stack **head_to,t_stack **head_from, char c)
 		from->next = to;
 		*head_to = from;
 	}
-	printf("p%c\n", c);
+	ft_printf("p%c\n", c);
 	return (0);
 }
 
@@ -64,11 +64,11 @@ int	rab(t_stack **head, char c)
 		stack = stack->next;
 	}
 	if (c == 'r')
-		printf("rr\n");
+		ft_printf("rr\n");
 	else if (c == 'd')
 		return (0);
 	else
-		printf("r%c\n", c);
+		ft_printf("r%c\n", c);
 	return (0);
 }
 
@@ -87,10 +87,10 @@ int	rrab(t_stack **head, char c)
 	last->next = *head;
 	*head = last;
 	if (c == 'r')
-		printf("rrr\n");
+		ft_printf("rrr\n");
 	else if (c == 'd')
 		return (0);
 	else
-		printf("rr%c\n",c);
+		ft_printf("rr%c\n",c);
 	return (0);
 }

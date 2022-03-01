@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting.c                                          :+:      :+:    :+:   */
+/*   sorting_big.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:54:02 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/25 22:03:15 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 16:56:08 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 void	print_struct(t_op *op)
 {
-	printf("rra %d\n", op->rra);
-	printf("rrb %d\n", op->rrb);
-	printf("ra %d\n", op->ra);
-	printf("rb %d\n", op->rb);
+	ft_printf("rra %d\n", op->rra);
+	ft_printf("rrb %d\n", op->rrb);
+	ft_printf("ra %d\n", op->ra);
+	ft_printf("rb %d\n", op->rb);
 }
 
 

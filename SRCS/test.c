@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 18:57:39 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/25 17:28:52 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 16:57:40 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ int	print_stack(t_stack *head, char c)
 	t_stack	*stack;
 	
 	stack = head;
-	printf("stack %c : ", c);
+	ft_printf("stack %c : ", c);
 	while (stack)
 	{
-		printf("%i ", stack->num);
+		ft_printf("%i ", stack->num);
 		stack = stack->next;
 	}
-	printf("\n");
+	ft_printf("\n");
 	return (0);
 }
 

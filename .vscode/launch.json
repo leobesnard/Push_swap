@@ -1,0 +1,29 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "gcc - Build and debug active file",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/push_swap",
+			"args": [28 56 49 77 32 72 4 40 96 83 38 35 31 3 88 48 80 66 95 69 64 8 87 86 85 37 21 46 18 19 79 91 27 63 74 29 52 82 71 78 65 93 12 53 43 67 14 90 10 75 73 33 41 97 76 61 54 22 20 81 62 51 58 39 100 70 13 26 68 11 23 57 17 45 99 16 98 94 5 34 1 59 30 89 47 0 2 42 55 36 84 92 7 25 44 15 50 9 24 6],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				}
+			],
+			"preLaunchTask": "C/C++: gcc build active file",
+			"miDebuggerPath": "/usr/bin/gdb"
+		}
+	]
+}

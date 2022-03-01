@@ -1,18 +1,39 @@
-SRCS = SRCS/check_arg.c SRCS/commands.c SRCS/commands2.c SRCS/parsing.c SRCS/tools.c SRCS/sorting_big.c SRCS/cost.c SRCS/mediane.c SRCS/sorting_small.c SRCS/test.c #SRCS/push_swap.c  
+SRCDIR = SRCS/
+OBJDIR = bin/
+INCDIR = include/
+FTPATH = libft/
+INDIR = $(FTPATH)include/
 
-OBJS = ${SRCS:.c=.o}
+#################################################################
+SRCS = check_arg.c\
+	commands.c\
+	commands2.c\
+	parsing.c\
+	tools.c\
+	sorting_big.c\
+	cost.c\
+	mediane.c\
+	sorting_small.c\
+	push_swap.c\
 
+OBJS = ${addprefix $(OBJDIR),$(SRCS:.c=.o)}
+#################################################################
 CFLAGS = -Wall -Wextra -Werror
-
+CC = gcc -g
+INCPATH = -I$(INCDIR) -I$(INDIR)
+LIBPATH = -L$(FTPATH)
 NAME = push_swap
 
 all: ${NAME}
 
-.c.o:
-	gcc -g ${CFLAGS} -c $< -o $@
+$(OBJDIR)%.o: $(SRCDIR)%.c
+	$(CC) -c ${CFLAGS} $(INCPATH) $< -o $@
 
-${NAME}: ${OBJS}
-	gcc -g ${OBJS} -o $(NAME)
+${NAME}: ${OBJS} $(LIBFT)
+	$(CC) ${OBJS} $(LIBFT) -o $(NAME)
+
+$(LIBFT):
+	make -C $(FTPATH)
 
 clean:
 	rm -f ${OBJS}
@@ -22,4 +43,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all libft clean fclean re

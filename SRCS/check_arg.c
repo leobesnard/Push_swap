@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:39:31 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/01/24 17:18:57 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 13:35:20 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	check_arg(int argc, char **argv)
 	i = 1;
 	j = 0;
 	if (argc < 2)
-		return (1);
+		return (2);
 	while (i < argc)
 	{
 		if (argv[i][0] == '-' && !argv[i][1])
@@ -43,10 +43,12 @@ int	check_arg(int argc, char **argv)
 
 int	check_error(int argc, char **argv)
 {
-	if (check_arg(argc, argv))
+	if (check_arg(argc, argv) == 1)
 	{
 		write (2, "Error\n", 6);
 		return (1);
 	}
+	else if (check_arg(argc, argv) == 2)
+		return (1);
 	return (0);
 }

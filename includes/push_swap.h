@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:44:59 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/25 17:41:32 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 17:51:57 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include "libft.h"
 
 typedef struct s_stack
 {
@@ -63,7 +64,7 @@ int	maxindex(t_stack **head);
 int	minindex(t_stack **head);
 int	get_value(int index, t_stack **head);
 int	find_lowcost(t_stack **head_a, t_stack **head_b);
-void	ft_lstadd_back(t_stack **alst, t_stack *new);
+void	ft_lstaddd_back(t_stack **alst, t_stack *new);
 int	find_sup(int value, t_stack **head);
 int	numop(t_stack **head_a, t_stack **head_b, int index, t_op *op);
 void	execop(t_stack **head_a, t_stack **head_b, t_op *op);

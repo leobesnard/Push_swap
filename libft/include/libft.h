@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 12:39:00 by lbesnard          #+#    #+#             */
-/*   Updated: 2021/11/30 18:20:06 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 17:51:38 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,20 +51,24 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
+typedef int t_content;
+
 typedef struct s_list
 {
-	void			*content;
+	t_content		content;
 	struct s_list	*next;
 }	t_list;
 
-t_list	*ft_lstnew(void *content);
+t_list	*ft_lstnew(t_content content);
 t_list	*ft_lstlast(t_list *lst);
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstmap(t_list *lst, t_content(*f)(t_content), void (*del)(t_content));
 void	ft_lstadd_front(t_list **alst, t_list *new);
 void	ft_lstadd_back(t_list **alst, t_list *new);
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
-void	ft_lstclear(t_list **lst, void (*del)(void *));
-void	ft_lstiter(t_list *lst, void (*f)(void *));
+void	ft_lstdelone(t_list *lst, void (*del)(t_content));
+void	ft_lstclear(t_list **lst, void (*del)(t_content));
+void	ft_lstiter(t_list *lst, void (*f)(t_content));
 int		ft_lstsize(t_list *lst);
+int		ft_printf(const char *format, ...);
+char    *get_next_line(int fd);
 
 #endif 

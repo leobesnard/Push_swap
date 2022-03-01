@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 21:10:25 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/25 22:15:44 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 17:45:15 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ int	print_stack(t_stack *head, char c)
 	t_stack	*stack;
 	
 	stack = head;
-	printf("stack %c : ", c);
+	ft_printf("stack %c : ", c);
 	while (stack)
 	{
-		printf("%i ", stack->num);
+		ft_printf("%i ", stack->num);
 		stack = stack->next;
 	}
-	printf("\n");
+	ft_printf("\n");
 	return (0);
 }
 
@@ -38,17 +38,21 @@ int main(int argc, char **argv)
 	head_b = init_stack_b();
 	if ((!head_a))
 		return (0);
-	if (argc < 7)
+	if (size(&head_a) < 6)
 		sorting_small(&head_a, &head_b);
 	else
-		if (argc > 101)
+	{
+		if (size(&head_a) > 101)
 			push_med(&head_a, &head_b);
 		else 
 			while (!is_sort(&head_a) || size(&head_a) == 2)
 				pab(&head_b, &head_a, 'b');
 		sorting(&head_a, &head_b);
 		to_top(&head_a, minindex(&head_a));
-	/*print_stack(head_a, 'a');
-	print_stack(head_b, 'b');*/
+	}
+	ft_lstclear(&head_a, NULL);
+	ft_lstclear(&head_b, NULL);
+	/* print_stack(head_a, 'a');
+	print_stack(head_b, 'b'); */
 	return (0);
 }

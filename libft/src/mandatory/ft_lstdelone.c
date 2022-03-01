@@ -1,39 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 16:27:20 by lbesnard          #+#    #+#             */
-/*   Updated: 2021/11/24 17:01:12 by lbesnard         ###   ########.fr       */
+/*   Created: 2021/11/26 16:56:40 by lbesnard          #+#    #+#             */
+/*   Updated: 2022/03/01 17:36:57 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	ft_lstdelone(t_list *lst, void (*del)(t_content))
 {
-	int	i;
-	int	sign;
-	int	res;
-
-	i = 0;
-	res = 0;
-	sign = 1;
-	while (nptr[i] && ((nptr[i] <= 13 && nptr[i] >= 9) || nptr[i] == 32))
-		i++;
-	if (nptr[i] == '-')
-	{
-		sign = -1;
-		i++;
-	}
-	else if (nptr[i] == '+')
-		i++;
-	while (nptr[i] && (nptr[i] >= '0' && nptr[i] <= '9'))
-	{
-		res = (res * 10) + (nptr[i] - '0');
-		i++;
-	}
-	return (sign * res);
+	if (del)
+		(*del)(lst->content);
+	free(lst);
 }

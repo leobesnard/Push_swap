@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting.c                                          :+:      :+:    :+:   */
+/*   sorting_small.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:54:02 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/25 22:03:15 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 11:52:37 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,13 @@ int sort_five(t_stack **head_a, t_stack **head_b)
     if (is_sort(head_a))
         return (0);
     else
+	{
         while (size(head_a) > 3)
             pab(head_b, head_a, 'b');
         sort_three(head_a);
         sorting(head_a, head_b);
         to_top(head_a, minindex(head_a));
+	}
         return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 18:46:45 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/01/20 16:29:53 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 17:52:30 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_atoi(const char *nptr)
 	return (sign * res);
 }
 
-void	ft_lstadd_back(t_stack **alst, t_stack *new)
+void	ft_lstaddd_back(t_stack **alst, t_stack *new)
 {
 	t_stack	*last;
 
@@ -79,7 +79,7 @@ t_stack	*init_stack_a(int argc, char **argv)
 		tmp = ft_stacknew(ft_atoi(argv[i]));
 		if (!tmp)
 			return (NULL);
-		ft_lstadd_back(&head, tmp);
+		ft_lstaddd_back(&head, tmp);
 		i++;
 	}
 	return (head);

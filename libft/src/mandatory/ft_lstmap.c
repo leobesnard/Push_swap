@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 17:28:49 by lbesnard          #+#    #+#             */
-/*   Updated: 2021/11/30 14:23:54 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 17:31:49 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	ft_new_back(t_list *lst, void *content)
 	return (1);
 }
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, t_content (*f)(t_content), void (*del)(t_content))
 {
 	t_list	*head;
 
