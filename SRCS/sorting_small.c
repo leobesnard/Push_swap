@@ -6,13 +6,13 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:54:02 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/01 11:52:37 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 18:02:38 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int sort_three(t_stack **head_a)
+int sort_three(t_list **head_a)
 {
     if (is_sort(head_a))
         return (0);
@@ -35,7 +35,7 @@ int sort_three(t_stack **head_a)
     return (0);
 }
 
-int sort_five(t_stack **head_a, t_stack **head_b)
+int sort_five(t_list **head_a, t_list **head_b)
 {
     if (is_sort(head_a))
         return (0);
@@ -50,7 +50,7 @@ int sort_five(t_stack **head_a, t_stack **head_b)
         return (0);
 }
 
-int sorting_small(t_stack **head_a, t_stack **head_b)
+int sorting_small(t_list **head_a, t_list **head_b)
 {
     if (size(head_a) == 2)
         if (!is_sort(head_a))

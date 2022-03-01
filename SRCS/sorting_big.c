@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:54:02 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/01 16:56:08 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 18:02:38 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	print_struct(t_op *op)
 }
 
 
-int	filop(t_stack **head_a, t_stack **head_b, t_op *op, int cindex, int mindex)
+int	filop(t_list **head_a, t_list **head_b, t_op *op, int cindex, int mindex)
 {
 	op->ra = 0;
 	op->rb = 0;
@@ -39,7 +39,7 @@ int	filop(t_stack **head_a, t_stack **head_b, t_op *op, int cindex, int mindex)
 	return (0);
 }
 
-int	numop(t_stack **head_a, t_stack **head_b, int index, t_op *op)
+int	numop(t_list **head_a, t_list **head_b, int index, t_op *op)
 {
 	if (get_value(index, head_b) > get_value(maxindex(head_a), head_a))
 		filop(head_a, head_b, op, index, minindex(head_a));
@@ -48,7 +48,7 @@ int	numop(t_stack **head_a, t_stack **head_b, int index, t_op *op)
 	return (0);
 }
 
-void	execop(t_stack **head_a, t_stack **head_b, t_op *op)
+void	execop(t_list **head_a, t_list **head_b, t_op *op)
 {
 	//print_struct(op);
 	while (op->ra && op->rb)
@@ -73,23 +73,23 @@ void	execop(t_stack **head_a, t_stack **head_b, t_op *op)
 		rrab(head_b, 'b');	
 }
 
-int	is_sort(t_stack **head)
+int	is_sort(t_list **head)
 {
-	t_stack	*stack;
+	t_list	*stack;
 
 	stack = *head;
 	if (!stack)
 		return (0);
 	while (stack->next)
 	{
-		if (stack->num > stack->next->num)
+		if (stack->content > stack->next->content)
 			return (0);
 		stack = stack->next;
 	}
 	return (1);
 }
 
-int	sorting(t_stack **head_a, t_stack **head_b)
+int	sorting(t_list **head_a, t_list **head_b)
 {
 	t_op	op;
 
@@ -102,8 +102,8 @@ int	sorting(t_stack **head_a, t_stack **head_b)
 		numop(head_a, head_b, find_lowcost(head_a, head_b), &op);
 		execop(head_a, head_b, &op);
 		pab(head_a, head_b, 'a');
-		/*print_stack(*head_a, 'a');
-		print_stack(*head_b, 'b');*/
+		/*print_list(*head_a, 'a');
+		print_list(*head_b, 'b');*/
 	}
 	return (0);
 }

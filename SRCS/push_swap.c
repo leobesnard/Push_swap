@@ -6,21 +6,21 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 21:10:25 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/01 17:45:15 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 18:08:24 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	print_stack(t_stack *head, char c)
+int	print_list(t_list *head, char c)
 {
-	t_stack	*stack;
+	t_list	*stack;
 	
 	stack = head;
 	ft_printf("stack %c : ", c);
 	while (stack)
 	{
-		ft_printf("%i ", stack->num);
+		ft_printf("%i ", stack->content);
 		stack = stack->next;
 	}
 	ft_printf("\n");
@@ -29,13 +29,13 @@ int	print_stack(t_stack *head, char c)
 
 int main(int argc, char **argv)
 {
-	t_stack	*head_a;
-	t_stack	*head_b;
+	t_list	*head_a;
+	t_list	*head_b;
 
 	if (check_error(argc, argv))
 		return (0);
-	head_a = init_stack_a(argc, argv);
-	head_b = init_stack_b();
+	head_a = init_list_a(argc, argv);
+	head_b = init_list_b();
 	if ((!head_a))
 		return (0);
 	if (size(&head_a) < 6)
@@ -51,8 +51,8 @@ int main(int argc, char **argv)
 		to_top(&head_a, minindex(&head_a));
 	}
 	ft_lstclear(&head_a, NULL);
-	ft_lstclear(&head_b, NULL);
-	/* print_stack(head_a, 'a');
-	print_stack(head_b, 'b'); */
+	//ft_lstclear(&head_b, NULL);
+	/* print_list(head_a, 'a');
+	print_list(head_b, 'b'); */
 	return (0);
 }

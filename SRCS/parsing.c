@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 18:46:45 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/01 17:52:30 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 18:02:38 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int	ft_atoi(const char *nptr)
 	return (sign * res);
 }
 
-void	ft_lstaddd_back(t_stack **alst, t_stack *new)
+void	ft_lstaddd_back(t_list **alst, t_list *new)
 {
-	t_stack	*last;
+	t_list	*last;
 
 	last = *alst;
 	if (!*alst)
@@ -53,30 +53,30 @@ void	ft_lstaddd_back(t_stack **alst, t_stack *new)
 	last->next = new;
 }
 
-t_stack	*ft_stacknew(int content)
+t_list	*ft_listnew(int content)
 {
-	t_stack	*new;
+	t_list	*new;
 
-	new = malloc(sizeof(t_stack));
+	new = malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
-	new->num = content;
+	new->content = content;
 	new->next = NULL;
 	return (new);
 }
 
-t_stack	*init_stack_a(int argc, char **argv)
+t_list	*init_list_a(int argc, char **argv)
 {
 	int 	i;
-	t_stack	*head;
-	t_stack	*tmp;
+	t_list	*head;
+	t_list	*tmp;
 	
 	i = 1;
-	head = ft_stacknew(ft_atoi(argv[i]));
+	head = ft_listnew(ft_atoi(argv[i]));
 	i++;
 	while (i < argc)
 	{
-		tmp = ft_stacknew(ft_atoi(argv[i]));
+		tmp = ft_listnew(ft_atoi(argv[i]));
 		if (!tmp)
 			return (NULL);
 		ft_lstaddd_back(&head, tmp);
@@ -85,9 +85,9 @@ t_stack	*init_stack_a(int argc, char **argv)
 	return (head);
 }
 
-t_stack	*init_stack_b(void)
+t_list	*init_list_b(void)
 {
-	t_stack	*head;
+	t_list	*head;
 	
 	head = NULL;
 	return (head);

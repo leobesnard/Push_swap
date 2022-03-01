@@ -6,27 +6,27 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 14:26:27 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/23 22:49:01 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 18:02:38 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ss(t_stack **stack_a, t_stack **stack_b)
+int	ss(t_list **stack_a, t_list **stack_b)
 {
 	sab(stack_a, 'a');
 	sab(stack_b, 'b');
 	return (0);
 }
 
-int	rr(t_stack **stack_a, t_stack **stack_b)
+int	rr(t_list **stack_a, t_list **stack_b)
 {
 	rab(stack_a, 'r');
 	rab(stack_b, 'd');
 	return (0);
 }
 
-int	rrr(t_stack **stack_a, t_stack **stack_b)
+int	rrr(t_list **stack_a, t_list **stack_b)
 {
 	rrab(stack_a, 'r');
 	rrab(stack_b, 'd');

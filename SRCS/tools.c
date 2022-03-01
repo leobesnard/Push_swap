@@ -6,16 +6,16 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:14:36 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/25 16:41:26 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 18:02:38 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	size(t_stack **head)
+int	size(t_list **head)
 {
 	int		i;
-	t_stack	*stack;
+	t_list	*stack;
 
 	i = 0;
 	stack = *head;
@@ -27,9 +27,9 @@ int	size(t_stack **head)
 	return (i);
 }
 
-int	get_value(int index, t_stack **head)
+int	get_value(int index, t_list **head)
 {
-	t_stack	*stack;
+	t_list	*stack;
 	int		i;
 	
 	stack = *head;
@@ -41,12 +41,12 @@ int	get_value(int index, t_stack **head)
 		stack = stack->next;
 		i++;
 	}
-	return (stack->num);
+	return (stack->content);
 }
 
-int	maxindex(t_stack **head)
+int	maxindex(t_list **head)
 {
-	t_stack	*stack;
+	t_list	*stack;
 	int		max;
 	int		index;
 	int		i;
@@ -56,12 +56,12 @@ int	maxindex(t_stack **head)
 	index = 0;
 	if (!*head)
 		return (0);
-	max = stack->num;
+	max = stack->content;
 	while (stack)
 	{
-		if (stack->num > max)
+		if (stack->content > max)
 		{
-			max = stack->num;
+			max = stack->content;
 			index = i;
 		}
 		i++;
@@ -70,9 +70,9 @@ int	maxindex(t_stack **head)
 	return (index);
 }
 
-int	minindex(t_stack **head)
+int	minindex(t_list **head)
 {
-	t_stack	*stack;
+	t_list	*stack;
 	int		min;
 	int		index;
 	int		i;
@@ -82,12 +82,12 @@ int	minindex(t_stack **head)
 	index = 0;
 	if (!*head)
 		return (0);
-	min = stack->num;
+	min = stack->content;
 	while (stack)
 	{
-		if (stack->num < min)
+		if (stack->content < min)
 		{
-			min = stack->num;
+			min = stack->content;
 			index = i;
 		}
 		i++;

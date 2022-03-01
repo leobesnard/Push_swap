@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:39:46 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/01 16:54:46 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 18:02:38 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,21 @@ int	ft_swap(int *a, int *b)
 	return (0);
 }
 
-int	sab(t_stack **head, char c)
+int	sab(t_list **head, char c)
 {
-	t_stack	*stack;
+	t_list	*stack;
 	
 	stack = *head;
 	if (stack && stack->next)
-		ft_swap(&stack->num, &stack->next->num);
+		ft_swap(&stack->content, &stack->next->content);
 	ft_printf("s%c\n", c);
 	return (0);
 }
 
-int	pab(t_stack **head_to,t_stack **head_from, char c)
+int	pab(t_list **head_to,t_list **head_from, char c)
 {
-	t_stack	*to;
-	t_stack	*from;
+	t_list	*to;
+	t_list	*from;
 	
 	to = *head_to;
 	from = *head_from;
@@ -51,16 +51,16 @@ int	pab(t_stack **head_to,t_stack **head_from, char c)
 	return (0);
 }
 
-int	rab(t_stack **head, char c)
+int	rab(t_list **head, char c)
 {
-	t_stack	*stack;
+	t_list	*stack;
 
 	stack = *head;
 	if (!*head)
 		return (0);
 	while (stack->next)
 	{
-		ft_swap(&stack->num,&stack->next->num);
+		ft_swap(&stack->content,&stack->next->content);
 		stack = stack->next;
 	}
 	if (c == 'r')
@@ -72,10 +72,10 @@ int	rab(t_stack **head, char c)
 	return (0);
 }
 
-int	rrab(t_stack **head, char c)
+int	rrab(t_list **head, char c)
 {
-	t_stack	*last;
-	t_stack	*stack;
+	t_list	*last;
+	t_list	*stack;
 	
 	stack = *head;
 	while(stack->next->next)

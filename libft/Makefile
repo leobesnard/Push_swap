@@ -16,10 +16,11 @@ OBJS = ${addprefix $(OBJDIR),$(SRCS:.c=.o)}
 OBJSBNS = ${addprefix $(OBJDIR),$(SRCSBNS:.c=.o)}
 #####################################################################
 MANOBJ = $(addprefix $(OBJDIR), $(addprefix $(MANDIR), $(SRCS:.c=.o)))
+BNSOBJ = $(addprefix $(OBJDIR), $(addprefix $(MANDIR), $(SRCSBNS:.c=.o)))
 EXTOBJ = $(addprefix $(OBJDIR), $(addprefix $(EXTDIR), $(XFILES:.c=.o)))
 #####################################################################
 AR = ar rc
-CC = gcc
+CC = gcc -g
 CFLAGS = -Wall -Wextra -Werror
 INCPATH = -I$(INCDIR)
 
@@ -30,8 +31,8 @@ all: ${NAME}
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	$(CC) -c ${CGLAGS} $(INCPATH) $< -o $@
 
-${NAME}: ${MANOBJ} $(EXTOBJ)
-	$(AR) ${NAME} ${MANOBJ} $(EXTOBJ)
+${NAME}: ${MANOBJ} $(EXTOBJ) $(BNSOBJ)
+	$(AR) ${NAME} ${MANOBJ} $(EXTOBJ) $(BNSOBJ)
 
 clean:
 	rm -f ${MANOBJ} ${EXTOBJ}

@@ -18,7 +18,8 @@ SRCS = check_arg.c\
 
 OBJS = ${addprefix $(OBJDIR),$(SRCS:.c=.o)}
 #################################################################
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror 
+LINK = -lft
 CC = gcc -g
 INCPATH = -I$(INCDIR) -I$(INDIR)
 LIBPATH = -L$(FTPATH)
@@ -30,7 +31,7 @@ $(OBJDIR)%.o: $(SRCDIR)%.c
 	$(CC) -c ${CFLAGS} $(INCPATH) $< -o $@
 
 ${NAME}: ${OBJS} $(LIBFT)
-	$(CC) ${OBJS} $(LIBFT) -o $(NAME)
+	$(CC) ${OBJS} $(LIBFT) $(LIBPATH) $(LINK) -o $(NAME)
 
 $(LIBFT):
 	make -C $(FTPATH)

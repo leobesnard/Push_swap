@@ -6,19 +6,19 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:05:36 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/02/25 18:09:00 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 18:02:38 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	find_med(t_stack **head)
+int	find_med(t_list **head)
 {
 	int		i;
 	int		*tab;
 	int		tmp;
 	int		ret;
-	t_stack *stack;
+	t_list *stack;
 	
 	i = 0;
 	stack = *head;
@@ -39,7 +39,7 @@ int	find_med(t_stack **head)
 	return (ret);
 }
 
-int	to_top(t_stack **head, int index)
+int	to_top(t_list **head, int index)
 {
 	if (index < ((size(head) / 2) + 1))
 		while (index > 0)
@@ -56,9 +56,9 @@ int	to_top(t_stack **head, int index)
 	return (0);
 }
 
-int	med_top(t_stack **head_a, int med)
+int	med_top(t_list **head_a, int med)
 {
-	t_stack *stack;
+	t_list *stack;
 	int		i;
 	int		first_med;
 	int		last_med;
@@ -69,7 +69,7 @@ int	med_top(t_stack **head_a, int med)
 	i = 0;
 	while (stack)
 	{
-		if (stack->num <= med)
+		if (stack->content <= med)
 		{
 			if (first_med == -1)
 				first_med = i;
@@ -88,23 +88,23 @@ int	med_top(t_stack **head_a, int med)
 	return (0);
 }
 
-int	under_med(t_stack **head, int med)
+int	under_med(t_list **head, int med)
 {
-	t_stack	*stack;
+	t_list	*stack;
 
 	stack = *head;
 	while (stack)
 	{
-		if (stack->num < med)
+		if (stack->content < med)
 			return (1);
 		stack = stack->next;
 	}
 	return(0);
 }
 
-int	push_med(t_stack **head_a, t_stack **head_b)
+int	push_med(t_list **head_a, t_list **head_b)
 {
-	t_stack	*stack;
+	t_list	*stack;
 	int		med;
 
 	stack = *head_a;

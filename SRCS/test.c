@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 18:57:39 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/01 16:57:40 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/01 18:02:38 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@
 	printf("rb %d\n", op->rb);
 }*/
 
-int	print_stack(t_stack *head, char c)
+int	print_list(t_list *head, char c)
 {
-	t_stack	*stack;
+	t_list	*stack;
 	
 	stack = head;
 	ft_printf("stack %c : ", c);
 	while (stack)
 	{
-		ft_printf("%i ", stack->num);
+		ft_printf("%i ", stack->content);
 		stack = stack->next;
 	}
 	ft_printf("\n");
@@ -38,8 +38,8 @@ int	print_stack(t_stack *head, char c)
 int main()
 {
 
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_list	*stack_a;
+	t_list	*stack_b;
 	//t_op	op;
 
 	stack_a = NULL;
@@ -48,23 +48,23 @@ int main()
 	//op.rb = 0;
 	//op.rra = 0;
 	//op.rrb = 0;
-	ft_lstadd_back(&stack_a, ft_stacknew(3));
-	ft_lstadd_back(&stack_a, ft_stacknew(2));
-	ft_lstadd_back(&stack_a, ft_stacknew(1));
-	ft_lstadd_back(&stack_a, ft_stacknew(6));
-	ft_lstadd_back(&stack_a, ft_stacknew(14));
-	/*ft_lstadd_back(&stack_a, ft_stacknew(9));
-	ft_lstadd_back(&stack_a, ft_stacknew(10));
-	ft_lstadd_back(&stack_a, ft_stacknew(1));
-	ft_lstadd_back(&stack_a, ft_stacknew(17));
-	ft_lstadd_back(&stack_a, ft_stacknew(16));
-	ft_lstadd_back(&stack_a, ft_stacknew(15));
-	ft_lstadd_back(&stack_a, ft_stacknew(2));
-	ft_lstadd_back(&stack_b, ft_stacknew(7));
-	ft_lstadd_back(&stack_b, ft_stacknew(8));
-	ft_lstadd_back(&stack_b, ft_stacknew(13));
-	ft_lstadd_back(&stack_b, ft_stacknew(12));
-	ft_lstadd_back(&stack_b, ft_stacknew(0));*/
+	ft_lstadd_back(&stack_a, ft_listnew(3));
+	ft_lstadd_back(&stack_a, ft_listnew(2));
+	ft_lstadd_back(&stack_a, ft_listnew(1));
+	ft_lstadd_back(&stack_a, ft_listnew(6));
+	ft_lstadd_back(&stack_a, ft_listnew(14));
+	/*ft_lstadd_back(&stack_a, ft_listnew(9));
+	ft_lstadd_back(&stack_a, ft_listnew(10));
+	ft_lstadd_back(&stack_a, ft_listnew(1));
+	ft_lstadd_back(&stack_a, ft_listnew(17));
+	ft_lstadd_back(&stack_a, ft_listnew(16));
+	ft_lstadd_back(&stack_a, ft_listnew(15));
+	ft_lstadd_back(&stack_a, ft_listnew(2));
+	ft_lstadd_back(&stack_b, ft_listnew(7));
+	ft_lstadd_back(&stack_b, ft_listnew(8));
+	ft_lstadd_back(&stack_b, ft_listnew(13));
+	ft_lstadd_back(&stack_b, ft_listnew(12));
+	ft_lstadd_back(&stack_b, ft_listnew(0));*/
 	/*printf("lowcost: %d\n", find_lowcost(&stack_a, &stack_b));
 	numop(&stack_a, &stack_b, find_lowcost(&stack_a, &stack_b), &op);
 	print_struct(&op);
@@ -72,7 +72,7 @@ int main()
 	//printf("mediane : %d\n", find_med(&stack_a));
 	//sorting(&stack_a, &stack_b);
 	sorting_small(&stack_a, &stack_b);
-	print_stack(stack_a, 'a');
-	print_stack(stack_b, 'b');
+	print_list(stack_a, 'a');
+	print_list(stack_b, 'b');
 	return (0);
 }
