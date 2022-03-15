@@ -6,11 +6,11 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:39:46 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/01 18:02:38 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/15 19:03:34 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 
 int	ft_swap(int *a, int *b)

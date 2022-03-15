@@ -6,11 +6,11 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 18:57:39 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/01 18:02:38 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:26:37 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 /*void	print_struct(t_op *op)
 {

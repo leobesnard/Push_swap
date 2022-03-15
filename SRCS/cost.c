@@ -6,11 +6,11 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:13:49 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/01 18:02:38 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:26:04 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 int	find_sup(int value, t_list **head)
 {

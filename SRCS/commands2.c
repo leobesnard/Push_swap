@@ -6,11 +6,11 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 14:26:27 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/01 18:02:38 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:25:58 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 int	ss(t_list **stack_a, t_list **stack_b)
 {

@@ -6,11 +6,11 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:39:31 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/01 13:35:20 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:23:40 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 int	check_arg(int argc, char **argv)
 {

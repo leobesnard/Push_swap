@@ -3,6 +3,7 @@ OBJDIR = bin/
 INCDIR = include/
 FTPATH = libft/
 INDIR = $(FTPATH)include/
+LIBFT = $(FTPATH)libft.a
 
 #################################################################
 SRCS = check_arg.c\
@@ -35,6 +36,10 @@ ${NAME}: ${OBJS} $(LIBFT)
 
 $(LIBFT):
 	make -C $(FTPATH)
+
+checker:
+	make -C checker_dir/
+	cp checker_dir/checker .
 
 clean:
 	rm -f ${OBJS}

@@ -6,11 +6,11 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 18:46:45 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/01 18:02:38 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/15 19:43:52 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 int	ft_atoi(const char *nptr)
 {
@@ -72,11 +72,13 @@ t_list	*init_list_a(int argc, char **argv)
 	t_list	*tmp;
 	
 	i = 1;
-	head = ft_listnew(ft_atoi(argv[i]));
+	head = ft_lstnew(ft_atoi(argv[i]));
+	if (!head)
+		return(NULL);
 	i++;
 	while (i < argc)
 	{
-		tmp = ft_listnew(ft_atoi(argv[i]));
+		tmp = ft_lstnew(ft_atoi(argv[i]));
 		if (!tmp)
 			return (NULL);
 		ft_lstaddd_back(&head, tmp);
