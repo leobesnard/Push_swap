@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 22:33:33 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/15 22:35:02 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/16 18:51:22 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	check_double(t_list *head)
 {
 	t_list	*list;
 	t_list	*tmp;
-	
+
 	list = head;
 	while (list)
 	{
@@ -51,4 +51,4 @@ int	check_double(t_list *head)
 		list = list->next;
 	}
 	return (0);
-} 
+}

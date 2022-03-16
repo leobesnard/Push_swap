@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:59:52 by lbesnard          #+#    #+#             */
-/*   Updated: 2021/12/07 18:02:45 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/16 17:57:50 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ char	*get_next_line(int fd)
 	}
 	free(buffer);
 	ret = ft_parser(&stat[fd]);
-	if (!ret)
+	if (!ret || (stat[fd] && stat[fd][0] == '\0'))
 		free_ptr((void *)&stat[fd]);
 	return (ret);
 }

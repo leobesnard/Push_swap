@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:36:57 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/15 17:32:24 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/16 18:49:29 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int	swap(int *a, int *b)
 {
-	int tmp;
-	
+	int	tmp;
+
 	tmp = *a;
 	*a = *b;
 	*b = tmp;
@@ -26,18 +26,18 @@ int	swap(int *a, int *b)
 int	ft_sab(t_list **head)
 {
 	t_list	*stack;
-	
+
 	stack = *head;
 	if (stack && stack->next)
 		swap(&stack->content, &stack->next->content);
 	return (0);
 }
 
-int	ft_pab(t_list **head_to,t_list **head_from)
+int	ft_pab(t_list **head_to, t_list **head_from)
 {
 	t_list	*to;
 	t_list	*from;
-	
+
 	to = *head_to;
 	from = *head_from;
 	if (from)
@@ -58,7 +58,7 @@ int	ft_rab(t_list **head)
 		return (0);
 	while (stack->next)
 	{
-		swap(&stack->content,&stack->next->content);
+		swap(&stack->content, &stack->next->content);
 		stack = stack->next;
 	}
 	return (0);
@@ -68,9 +68,9 @@ int	ft_rrab(t_list **head)
 {
 	t_list	*last;
 	t_list	*stack;
-	
+
 	stack = *head;
-	while(stack->next->next)
+	while (stack->next->next)
 	{
 		stack = stack->next;
 	}

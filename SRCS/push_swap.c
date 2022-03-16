@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 21:10:25 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/15 19:08:42 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/16 18:46:43 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	print_list(t_list *head, char c)
 {
 	t_list	*stack;
-	
+
 	stack = head;
 	ft_printf("stack %c : ", c);
 	while (stack)
@@ -31,7 +31,7 @@ int	check_double(t_list *head)
 {
 	t_list	*list;
 	t_list	*tmp;
-	
+
 	list = head;
 	while (list)
 	{
@@ -51,7 +51,7 @@ int	check_double(t_list *head)
 	return (0);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_list	*head_a;
 	t_list	*head_b;
@@ -70,7 +70,7 @@ int main(int argc, char **argv)
 	{
 		if (size(&head_a) > 101)
 			push_med(&head_a, &head_b);
-		else 
+		else
 			while (!is_sort(&head_a) || size(&head_a) == 2)
 				pab(&head_b, &head_a, 'b');
 		sorting(&head_a, &head_b);

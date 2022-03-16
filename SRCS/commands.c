@@ -6,17 +6,16 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:39:46 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/15 19:03:34 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/16 18:48:36 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
 int	ft_swap(int *a, int *b)
 {
-	int tmp;
-	
+	int	tmp;
+
 	tmp = *a;
 	*a = *b;
 	*b = tmp;
@@ -26,7 +25,7 @@ int	ft_swap(int *a, int *b)
 int	sab(t_list **head, char c)
 {
 	t_list	*stack;
-	
+
 	stack = *head;
 	if (stack && stack->next)
 		ft_swap(&stack->content, &stack->next->content);
@@ -34,11 +33,11 @@ int	sab(t_list **head, char c)
 	return (0);
 }
 
-int	pab(t_list **head_to,t_list **head_from, char c)
+int	pab(t_list **head_to, t_list **head_from, char c)
 {
 	t_list	*to;
 	t_list	*from;
-	
+
 	to = *head_to;
 	from = *head_from;
 	if (from)
@@ -60,7 +59,7 @@ int	rab(t_list **head, char c)
 		return (0);
 	while (stack->next)
 	{
-		ft_swap(&stack->content,&stack->next->content);
+		ft_swap(&stack->content, &stack->next->content);
 		stack = stack->next;
 	}
 	if (c == 'r')
@@ -76,9 +75,9 @@ int	rrab(t_list **head, char c)
 {
 	t_list	*last;
 	t_list	*stack;
-	
+
 	stack = *head;
-	while(stack->next->next)
+	while (stack->next->next)
 	{
 		stack = stack->next;
 	}
@@ -91,6 +90,6 @@ int	rrab(t_list **head, char c)
 	else if (c == 'd')
 		return (0);
 	else
-		ft_printf("rr%c\n",c);
+		ft_printf("rr%c\n", c);
 	return (0);
 }

@@ -38,7 +38,7 @@ $(LIBFT):
 	make -C $(FTPATH)
 
 checker:
-	make -C checker_dir/
+	make re -C checker_dir/
 	cp checker_dir/checker .
 
 clean:

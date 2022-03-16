@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:14:36 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/15 18:26:42 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/16 18:23:52 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	get_value(int index, t_list **head)
 {
 	t_list	*stack;
 	int		i;
-	
+
 	stack = *head;
 	i = 0;
 	if (!*head)

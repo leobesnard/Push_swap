@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:39:31 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/15 18:23:40 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/16 18:35:27 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ int	check_arg(int argc, char **argv)
 			j++;
 		}
 		if (ft_atoi(argv[i]) <= INT_MIN || ft_atoi(argv[i]) >= INT_MAX)
-				return (1);
+			return (1);
 		j = 0;
 		i++;
 	}
-	return(0);
+	return (0);
 }
 
 int	check_error(int argc, char **argv)

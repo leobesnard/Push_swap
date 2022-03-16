@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 12:39:00 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/01 17:51:38 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/16 18:17:07 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strdup(const char *str);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
-char	*ft_substr(char const *str, unsigned int start, size_t len);
+char	*ft_substr(char *str, int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -51,7 +51,8 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
-typedef int t_content;
+typedef int			t_content;
+typedef t_content	t_con;
 
 typedef struct s_list
 {
@@ -61,7 +62,7 @@ typedef struct s_list
 
 t_list	*ft_lstnew(t_content content);
 t_list	*ft_lstlast(t_list *lst);
-t_list	*ft_lstmap(t_list *lst, t_content(*f)(t_content), void (*del)(t_content));
+t_list	*ft_lstmap(t_list *lst, t_con(*f)(t_con), void (*del)(t_con));
 void	ft_lstadd_front(t_list **alst, t_list *new);
 void	ft_lstadd_back(t_list **alst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(t_content));
@@ -69,6 +70,6 @@ void	ft_lstclear(t_list **lst, void (*del)(t_content));
 void	ft_lstiter(t_list *lst, void (*f)(t_content));
 int		ft_lstsize(t_list *lst);
 int		ft_printf(const char *format, ...);
-char    *get_next_line(int fd);
+char	*get_next_line(int fd);
 
 #endif 

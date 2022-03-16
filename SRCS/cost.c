@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:13:49 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/15 18:26:04 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/16 18:24:28 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	find_sup(int value, t_list **head)
 	int		index;
 	int		i;
 	t_list	*stack;
-	
+
 	i = 0;
 	diff = 2000;
 	stack = *head;
@@ -56,13 +56,13 @@ int	cost(t_list **head_a, t_list **head_b, int index)
 {
 	int	cost;
 	int	supindex;
-	
+
 	if (get_value(index, head_b) > get_value(maxindex(head_a), head_a))
 		cost = range(head_a, minindex(head_a)) + range(head_b, index);
-	else 
+	else
 	{
 		supindex = find_sup(get_value(index, head_b), head_a);
-		cost = range(head_a, supindex)  + range(head_b, index);
+		cost = range(head_a, supindex) + range(head_b, index);
 	}
 	return (cost);
 }
@@ -73,7 +73,7 @@ int	find_lowcost(t_list **head_a, t_list **head_b)
 	int		index;
 	int		i;
 	t_list	*stack;
-	
+
 	stack = *head_b;
 	i = 0;
 	lowcost = cost(head_a, head_b, i);
@@ -86,7 +86,7 @@ int	find_lowcost(t_list **head_a, t_list **head_b)
 			index = i;
 		}
 		stack = stack->next;
-		i++;	
+		i++;
 	}
 	return (index);
 }
