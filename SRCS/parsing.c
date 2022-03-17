@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 18:46:45 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/16 18:46:02 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/17 18:29:45 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,13 +72,13 @@ t_list	*init_list_a(int argc, char **argv)
 	t_list	*tmp;
 
 	i = 1;
-	head = ft_lstnew(ft_atoi(argv[i]));
+	head = ft_listnew(ft_atoi(argv[i]));
 	if (!head)
 		return (NULL);
 	i++;
 	while (i < argc)
 	{
-		tmp = ft_lstnew(ft_atoi(argv[i]));
+		tmp = ft_listnew(ft_atoi(argv[i]));
 		if (!tmp)
 			return (NULL);
 		ft_lstaddd_back(&head, tmp);

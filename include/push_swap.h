@@ -6,7 +6,7 @@
 /*   By: lbesnard <lbesnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:44:59 by lbesnard          #+#    #+#             */
-/*   Updated: 2022/03/16 19:13:03 by lbesnard         ###   ########.fr       */
+/*   Updated: 2022/03/17 18:54:10 by lbesnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ int		sort_five(t_list **head_a, t_list **head_b);
 int		sort_three(t_list **head_a);
 int		sorting_small(t_list **head_a, t_list **head_b);
 int		is_sort(t_list **head);
+void	med_top2(int first_med, int last_med, t_list **head_a);
 
 #endif

@@ -14,6 +14,7 @@ SRCS = check_arg.c\
 	sorting_big.c\
 	cost.c\
 	mediane.c\
+	mediane2.c\
 	sorting_small.c\
 	push_swap.c\
 
